@@ -190,3 +190,5 @@ function inName() {
 
 
 $("#main").append(internationalizeButton);
+
+$("#mapDiv").append(googleMap);
