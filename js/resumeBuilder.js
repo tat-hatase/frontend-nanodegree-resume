@@ -11,8 +11,44 @@ var bio = {
 	"welcomeMessage": "Welcome to my resume page!",
 	"skills": ["strategic problem solving", "teaching", "some computer stuff"],
 	"biopic": "img/profile.jpg",
+	"display": function(){
+		var formattedName = HTMLheaderName.replace("%data%", bio.name);
+		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+		var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+
+		$("#header").prepend(formattedRole);
+		$("#header").prepend(formattedName);
+
+		$("#topContacts").append(formattedMobile);
+		$("#topContacts").append(formattedEmail);
+		$("#topContacts").append(formattedGithub);
+		$("#topContacts").append(formattedTwitter);
+		$("#topContacts").append(formattedLocation);
+		$("#header").append(formattedBioPic);
+		$("#header").append(formattedWelcomeMsg);
+		
+		$("#footerContacts").append(formattedMobile);
+		$("#footerContacts").append(formattedEmail);
+		$("#footerContacts").append(formattedGithub);
+		$("#footerContacts").append(formattedTwitter);
+		$("#footerContacts").append(formattedLocation);
+
+		if (bio.skills.length > 0){
+			$("#header").append(HTMLskillsStart);
+			for (var skill in bio.skills) {
+				var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+				$("#skills").append(formattedSkill);
+			};
+		};
 	}
 }
+
 
 var education = {
 	"schools": [{
