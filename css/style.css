@@ -132,6 +132,10 @@ a {
   background-color: #484848;
 }
 
+#skills {
+	display: list-item;
+}
+
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -158,6 +162,10 @@ ul {
 
 img {
   padding: 10px;
+}
+
+.proj-img {
+  max-width: 100px;
 }
 
 span {
