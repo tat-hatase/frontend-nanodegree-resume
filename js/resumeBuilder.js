@@ -10,7 +10,7 @@ var bio = {
 	},
 	"welcomeMessage": "Welcome to my resume page!",
 	"skills": ["strategic problem solving", "teaching", "some computer stuff"],
-	"biopic": "img/profile.jpg",
+	"biopic": "images/profile.jpg",
 	"display": function(){
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -119,7 +119,7 @@ var work = {
       "title": "Instructor",
       "location": "Corvallis, OR",
       "dates": "2011-Present",
-      "description": "Teaching lower to mid level math courses.",
+      "description": "string",
 	  "url": "http://www.math.oregonstate.edu/"
 	  },
 	  {
@@ -127,9 +127,24 @@ var work = {
       "title": "Graduate Teaching Assistant",
       "location": "Corvallis, OR",
       "dates": "2004-2011",
-      "description": "Assisting in lower to mid level math courses by facilitating recitations, grading quizzes, homework, and worksheets, proctoring exams, and answering any questions students may have.",
+      "description": "string",
 	  "url": "http://www.math.oregonstate.edu/"
 	  }],
+	"display": function(){
+		for (var job in work.jobs){
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer).replace("#", work.jobs[job].url);
+			var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+			var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			
+			$("#workExperience").append(HTMLworkStart);
+			$(".work-entry:last").append(formattedEmployer + formattedWorkTitle);
+			$(".work-entry:last").append(formattedWorkDates);
+			$(".work-entry:last").append(formattedWorkLocation);
+			$(".work-entry:last").append(formattedWorkDescription);
+		};
+	}
 }
 
 var projects = {
@@ -137,7 +152,11 @@ var projects = {
       "title": "PhD Thesis",
       "dates": "Completed Summer 2011",
       "description": "Algebraic Pappus Curves",
-      "images": ["img/Excellent.jpg", "img/logo.jpg", "img/Photobomb.jpg"],
+      "images": ["images/Excellent.jpg", "images/logo.jpg", "images/Photobomb.jpg"],
 	  "url": "https://ir.library.oregonstate.edu/xmlui/bitstream/handle/1957/23320/Tatsuhiko%20Hatase%20-%20Thesis.pdf?sequence=1"
 	  }],
 }
+
+bio.display();
+education.display();
+work.display();
