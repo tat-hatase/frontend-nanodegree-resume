@@ -119,7 +119,7 @@ var work = {
       "title": "Instructor",
       "location": "Corvallis, OR",
       "dates": "2011-Present",
-      "description": "string",
+      "description": "Teaching lower to mid level math courses.",
 	  "url": "http://www.math.oregonstate.edu/"
 	  },
 	  {
@@ -127,7 +127,7 @@ var work = {
       "title": "Graduate Teaching Assistant",
       "location": "Corvallis, OR",
       "dates": "2004-2011",
-      "description": "string",
+      "description": "Assisting the instructors of lower to mid level math courses by facilitating recitations, grading homework, quizzes, and worksheets, proctoring exams, and answering questions the students may have. Taking on the teaching position for smaller classes about once a year.",
 	  "url": "http://www.math.oregonstate.edu/"
 	  }],
 	"display": function(){
@@ -152,7 +152,7 @@ var projects = {
       "title": "PhD Thesis",
       "dates": "Completed Summer 2011",
       "description": "Algebraic Pappus Curves",
-      "images": ["img/Excellent.jpg", "img/logo.jpg", "img/Photobomb.jpg"],
+      "images": ["images/Excellent.jpg", "images/logo.jpg", "images/Photobomb.jpg"],
 	  "url": "https://ir.library.oregonstate.edu/xmlui/bitstream/handle/1957/23320/Tatsuhiko%20Hatase%20-%20Thesis.pdf?sequence=1"
 	  }],
 	"display": function(){
