@@ -177,3 +177,16 @@ bio.display();
 education.display();
 work.display();
 projects.display();
+
+function inName() {
+	var name = $("#name").text();
+	name = name.trim().split(" ");
+	console.log(name);
+	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+	name[1] = name[1].toUpperCase();
+	
+	return name[0] + " " + name[1];
+};
+
+
+$("#main").append(internationalizeButton);
