@@ -152,11 +152,28 @@ var projects = {
       "title": "PhD Thesis",
       "dates": "Completed Summer 2011",
       "description": "Algebraic Pappus Curves",
-      "images": ["images/Excellent.jpg", "images/logo.jpg", "images/Photobomb.jpg"],
+      "images": ["img/Excellent.jpg", "img/logo.jpg", "img/Photobomb.jpg"],
 	  "url": "https://ir.library.oregonstate.edu/xmlui/bitstream/handle/1957/23320/Tatsuhiko%20Hatase%20-%20Thesis.pdf?sequence=1"
 	  }],
+	"display": function(){
+		for (var project in projects.projects){
+			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#",projects.projects[project].url);
+			var formattedProjectDates= HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+			var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+			
+			$("#projects").append(HTMLprojectStart);
+			$(".project-entry").append(formattedProjectTitle);
+			$(".project-entry").append(formattedProjectDates);
+			$(".project-entry").append(formattedProjectDescription);
+			for (image in projects.projects[project].images){
+				$(".project-entry").append(HTMLprojectImage.replace("%data%", projects.projects[project].images[image]));
+			};
+			
+		};
+	}
 }
 
 bio.display();
 education.display();
 work.display();
+projects.display();
